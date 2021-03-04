@@ -30,7 +30,7 @@ class JournalMap():
         self.journal[0] = DataItem(value, transaction_id)
 
     def check_journal(transaction_id, value):
-        if len(self.journal) and self.journal[0].transaction_id < transaction_id:
+        if len(self.journal) and self.journal[0].transaction_id > transaction_id:
             return self.journal[0].value
         return value
 
