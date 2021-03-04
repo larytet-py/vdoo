@@ -1,8 +1,10 @@
 '''
+Key value store with the following API
 DS.get(index) -> value
 DS.set(index,value)
 DS.setAll(value)
 
+Constrain:
 Alll operations O(1)
 '''
 
