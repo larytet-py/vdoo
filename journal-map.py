@@ -12,14 +12,15 @@ DataItem = namedtuple("DataItem", ["value", "transaction_id"])
 
 class JournalMap():
     '''
-    The idea is to keep timestamp of the upadtes together with the updated values.
+    The idea is to keep the timestamp of the upadtes together with the values.
     
     When get() is called check if there is a pending operation in the setAll() 
     journal. If there is a pending operation compare the timestamps of the 
     journal and of the last set(). If the journal value is newer use the value from
     the journal. 
     
-    Call setAll() updated the journal.
+    Calls to setAll() update the journal. Calls to set() update the value and 
+    timestamp in the map.
     '''
     def __init__(self):
         self.data = {}  # (key,value) store of DataItem
